@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+#issueTrackerURL = ""
+license = "GPLv3"
+
+[[mods]]
+modId = "social_distance"
+version = "${version}"
+displayName = "Social Distance"
+authors = "Karashok-Leo"
+description = '''
+Social Distance
+'''
+#logoFile = ""
+
+[[dependencies.social_distance]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.social_distance]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"
