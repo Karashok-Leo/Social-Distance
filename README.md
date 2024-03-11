@@ -1,6 +1,7 @@
-## Introduction
+# 🪄Introduction
 This mod is mainly made for modpacks, preventing players from easily killing bosses from afar.
-## Configuration
+
+# ⚙️Configuration
 ### The initial configuration file looks like:
 
 ```
@@ -20,3 +21,6 @@ The key of the entry represents the identifier (namespace:path) of the entity.
 The value represents the "social distance" (float), within which players can attack the target.
 
 ![Screenshot](screenshot.png "Screenshot")
+
+# ✉️Feedback
+If there are any bugs or suggestions, please provide feedback to the issue page.
