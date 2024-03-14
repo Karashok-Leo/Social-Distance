@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[47,)"
+loaderVersion = "[40,)"
 #issueTrackerURL = ""
 license = "GPLv3"
 
@@ -16,13 +16,13 @@ Social Distance
 [[dependencies.social_distance]]
 modId = "forge"
 mandatory = true
-versionRange = "[47,)"
+versionRange = "[40,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.social_distance]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20.1,)"
+versionRange = "[1.18.2,)"
 ordering = "NONE"
 side = "BOTH"
