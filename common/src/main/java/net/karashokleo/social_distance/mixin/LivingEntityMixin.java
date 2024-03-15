@@ -2,11 +2,8 @@ package net.karashokleo.social_distance.mixin;
 
 import net.karashokleo.social_distance.config.ModConfig;
 import net.minecraft.ChatFormatting;
-import net.minecraft.Util;
 import net.minecraft.core.Registry;
-import net.minecraft.network.chat.ChatType;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -34,8 +31,8 @@ public class LivingEntityMixin
         if (ModConfig.manager.value.show_message && attacker instanceof ServerPlayer player)
         {
             DecimalFormat df = new DecimalFormat("0.00");
-            Component component = new TranslatableComponent("message.social_distance.out_of_range", df.format(range), df.format(distance)).withStyle(ChatFormatting.RED);
-            player.sendMessage(component, ChatType.GAME_INFO, Util.NIL_UUID);
+            Component component = Component.translatable("message.social_distance.out_of_range", df.format(range), df.format(distance)).withStyle(ChatFormatting.RED);
+            player.sendSystemMessage(component, ModConfig.manager.value.message_overlay);
         }
         cir.setReturnValue(false);
     }

@@ -1,7 +1,7 @@
 modLoader = "javafml"
-loaderVersion = "[40,)"
-#issueTrackerURL = ""
-license = "GPLv3"
+loaderVersion = "[43,)"
+issueTrackerURL = "https://github.com/Karashok-Leo/Social-Distance/issues"
+license = "MIT"
 
 [[mods]]
 modId = "social_distance"
@@ -16,13 +16,13 @@ Social Distance
 [[dependencies.social_distance]]
 modId = "forge"
 mandatory = true
-versionRange = "[40,)"
+versionRange = "[43,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.social_distance]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.18.2,)"
+versionRange = "[1.19.2,)"
 ordering = "NONE"
 side = "BOTH"
