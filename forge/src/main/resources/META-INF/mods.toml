@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[40,)"
-#issueTrackerURL = ""
-license = "GPLv3"
+issueTrackerURL = "https://github.com/Karashok-Leo/Social-Distance/issues"
+license = "MIT"
 
 [[mods]]
 modId = "social_distance"

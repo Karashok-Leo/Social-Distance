@@ -48,9 +48,9 @@ shadowJar {
 }
 
 remapJar {
-    injectAccessWidener = true
     input.set shadowJar.archiveFile
     dependsOn shadowJar
+    archiveBaseName.set "${rootProject.name}-${project.name}"
 }
 
 sourcesJar {
