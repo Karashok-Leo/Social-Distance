@@ -8,9 +8,9 @@
     "Karashok-Leo"
   ],
   "contact": {
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Karashok-Leo/Social-Distance/"
   },
-  "license": "GPLv3",
+  "license": "MIT",
   "icon": "assets/social_distance/icon.png",
   "environment": "*",
   "entrypoints": {
