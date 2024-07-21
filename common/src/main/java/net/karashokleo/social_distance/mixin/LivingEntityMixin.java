@@ -1,9 +1,8 @@
 package net.karashokleo.social_distance.mixin;
 
+import net.karashokleo.social_distance.SocialDistance;
 import net.karashokleo.social_distance.config.ModConfig;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.Registry;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -12,8 +11,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.text.DecimalFormat;
 
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin
@@ -25,15 +22,11 @@ public class LivingEntityMixin
         Entity attacker = source.getEntity();
         if (entity.getLevel().isClientSide() || attacker == null) return;
 
-        Float range = ModConfig.manager.value.distance_config.get(Registry.ENTITY_TYPE.getKey(entity.getType()));
+        Float range = ModConfig.get().distance_config.get(Registry.ENTITY_TYPE.getKey(entity.getType()).toString());
         float distance = entity.distanceTo(attacker);
         if (range == null || range >= distance) return;
-        if (ModConfig.manager.value.show_message && attacker instanceof ServerPlayer player)
-        {
-            DecimalFormat df = new DecimalFormat("0.00");
-            Component component = Component.translatable("message.social_distance.out_of_range", df.format(range), df.format(distance)).withStyle(ChatFormatting.RED);
-            player.sendSystemMessage(component, ModConfig.manager.value.message_overlay);
-        }
+        if (ModConfig.get().show_message && attacker instanceof ServerPlayer player)
+            player.sendSystemMessage(SocialDistance.getMessage(range, distance), ModConfig.get().message_overlay);
         cir.setReturnValue(false);
     }
 }

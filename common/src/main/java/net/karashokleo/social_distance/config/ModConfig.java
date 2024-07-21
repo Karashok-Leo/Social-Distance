@@ -5,16 +5,20 @@ import net.tinyconfig.ConfigManager;
 
 public class ModConfig
 {
-    public static final ConfigManager<DefaultConfig> manager = new ConfigManager<>
+    private static final ConfigManager<DefaultConfig> manager = new ConfigManager<>
             (SocialDistance.MOD_ID, new DefaultConfig())
             .builder()
             .setDirectory(".")
             .enableLogging(true)
-            .sanitize(true)
             .build();
 
-    public static void init()
+    public static void refresh()
     {
         manager.refresh();
+    }
+
+    public static DefaultConfig get()
+    {
+        return manager.value;
     }
 }
